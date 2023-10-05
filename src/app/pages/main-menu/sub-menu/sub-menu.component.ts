@@ -11,6 +11,13 @@ export class SubMenuComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {}
+    click() {
+        this.modal
+            .open('Congferma', 'Conferma se riesci')
+            .subscribe((action) => {
+                console.log(action, 'UUUUUUUUUUUUS');
+            });
+    }
     openModalUU() {
         this.modal
             .open('Congferma', 'Conferma lo status')

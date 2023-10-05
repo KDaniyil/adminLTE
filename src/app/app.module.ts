@@ -36,6 +36,8 @@ import {ProfabricComponentsModule} from '@profabric/angular-components';
 import {defineCustomElements} from '@profabric/web-components/loader';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { HeaderCardComponent } from './components/header-card/header-card.component';
+import { BodyCardComponent } from './components/body-card/body-card.component';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -63,7 +65,9 @@ registerLocaleData(localeEn, 'en-EN');
         MenuItemComponent,
         ControlSidebarComponent,
         SidebarSearchComponent,
-        ModalComponent
+        ModalComponent,
+        HeaderCardComponent,
+        BodyCardComponent
     ],
     imports: [
         BrowserModule,
