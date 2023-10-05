@@ -47,9 +47,31 @@
             </div>
             <div class="card-body">
                 Start creating your amazing application!
+                <input type="datetime-local" />
+                <button>Send</button>
             </div>
             <!-- /.card-body -->
-            <div class="card-footer">Footer</div>
+            <div class="card-footer">
+                <button
+                    class="btn btn-primary"
+                    (click)="openModal1(modalTemplate)"
+                >
+                    Apri modal 1
+                </button>
+                <button
+                    class="btn btn-dark"
+                    (click)="openModal2(modalTemplate2)"
+                >
+                    apri modal 2
+                </button>
+
+                <ng-template #modalTemplate>
+                    <p>Conferma eliminare</p>
+                </ng-template>
+                <ng-template #modalTemplate2>
+                    <p>Conferma o no</p>
+                </ng-template>
+            </div>
             <!-- /.card-footer-->
         </div>
     </div>
