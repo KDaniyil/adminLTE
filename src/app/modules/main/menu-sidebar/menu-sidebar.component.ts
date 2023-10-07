@@ -43,8 +43,13 @@ export const MENU = [
         path: ['/blank']
     },
     {
+        name: 'Blank',
+        iconClasses: 'fas fa-file',
+        path: ['/blank']
+    },
+    {
         name: 'Main Menu',
-        iconClasses: 'fas fa-folder',        
+        iconClasses: 'fas fa-folder',
         children: [
             {
                 name: 'Sub Menu',
