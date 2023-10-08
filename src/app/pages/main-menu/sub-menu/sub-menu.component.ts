@@ -17,7 +17,8 @@ export class SubMenuComponent implements OnInit {
         plugins: [dayGridPlugin],
         initialView: 'dayGridMonth',
         weekends: false,
-        events: [{title: 'Meeting', start: new Date()}]
+        events: [{title: 'Meeting', start: new Date()}],
+        locale: this.lang
     };
     modal = inject(ModalService);
     constructor(private translate: TranslateService) {
@@ -42,5 +43,7 @@ export class SubMenuComponent implements OnInit {
     changeLanguage() {
         this.lang = this.lang === 'it' ? 'en' : 'it';
         this.translate.use(this.lang);
+
+        this.calendarOptions.locale = this.lang;
     }
 }

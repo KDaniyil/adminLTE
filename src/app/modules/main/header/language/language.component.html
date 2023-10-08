@@ -5,11 +5,11 @@
         </a>
     </div>
     <div slot="menu">
-        <a href="#" class="dropdown-item active">
-            <i class="flag-icon flag-icon-tr mr-2"></i>
-            <span>Turkish</span>
+        <a class="dropdown-item active" (click)="changeLanguage('it')">
+            <i class="flag-icon flag-icon-it mr-2"></i>
+            <span>Italiano</span>
         </a>
-        <a href="#" class="dropdown-item">
+        <a class="dropdown-item" (click)="changeLanguage('en')">
             <i class="flag-icon flag-icon-us mr-2"></i>
             <span>English</span>
         </a>
