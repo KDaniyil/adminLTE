@@ -22,17 +22,23 @@
     <div class="container-fluid">
         <div class="card">
             <app-header-card>
+                <input
+                    type="text"
+                    placeholder="{{ 'sub.input-placeholder' | translate }}"
+                />
                 <button
                     class="btn btn-success custom"
-                    title="UUU"
+                    title=""
                     (click)="click()"
                 >
-                    CCC
+                    {{ 'sub.button' | translate }}
                 </button>
+                <button (click)="changeLanguage()"></button>
             </app-header-card>
             <app-body-card></app-body-card>
+            <full-calendar [options]="calendarOptions"></full-calendar>
             <!-- /.card-body -->
-            <div class="card-footer">Footer</div>
+            <div class="card-footer">{{ 'sub.footer' }} | translate</div>
             <!-- /.card-footer-->
         </div>
     </div>

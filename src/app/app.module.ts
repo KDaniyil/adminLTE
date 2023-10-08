@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from '@/app-routing.module';
 import {AppComponent} from './app.component';
@@ -35,12 +35,20 @@ import {uiReducer} from './store/ui/reducer';
 import {ProfabricComponentsModule} from '@profabric/angular-components';
 import {defineCustomElements} from '@profabric/web-components/loader';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
-import { ModalComponent } from './components/modal/modal.component';
-import { HeaderCardComponent } from './components/header-card/header-card.component';
-import { BodyCardComponent } from './components/body-card/body-card.component';
+import {ModalComponent} from './components/modal/modal.component';
+import {HeaderCardComponent} from './components/header-card/header-card.component';
+import {BodyCardComponent} from './components/body-card/body-card.component';
+import {FullCalendarModule} from '@fullcalendar/angular';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
 
 @NgModule({
     declarations: [
@@ -71,6 +79,14 @@ registerLocaleData(localeEn, 'en-EN');
     ],
     imports: [
         BrowserModule,
+        FullCalendarModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
         StoreModule.forRoot({auth: authReducer, ui: uiReducer}),
         HttpClientModule,
         AppRoutingModule,
