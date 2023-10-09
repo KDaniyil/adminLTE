@@ -1,0 +1,9 @@
+{
+    "sub": {
+        "button": "Apri",
+        "footer": "Piede di pagina",
+        "input-placeholder": "Inserisci il nome",
+        "modal-title": "Conferma",
+        "modal-text": "Conferma se riesci"
+    }
+}

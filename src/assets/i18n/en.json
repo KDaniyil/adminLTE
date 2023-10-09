@@ -1,0 +1,9 @@
+{
+    "sub": {
+        "button": "OPen",
+        "footer": "The footer of the page",
+        "input-placeholder": "Please insert the name",
+        "modal-title": "Confirmation",
+        "modal-text": "confirm if you can!!!"
+    }
+}
